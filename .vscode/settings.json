@@ -1,0 +1,10 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    //  or "ruby.rubocop.executePath": "/Users/you/.rbenv/shims/"
+    // if not specified searches for 'rubocop' executable available on PATH
+    "ruby.rubocop.executePath": "C:/RailsInstaller/Ruby2.2.0/bin/",
+    // If not specified, it assumes a null value by default.
+    // "ruby.rubocop.configFilePath": "/path/to/config/.rubocop.yml",
+    // default true
+    "ruby.rubocop.onSave": true
+}
