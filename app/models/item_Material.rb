@@ -1,4 +1,4 @@
 class ItemMaterial < ActiveRecord::Base
-  has_many :items
-  has_many :materials
+  belongs_to :items
+  belongs_to :materials
 end

@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Picture:</strong>
+  <%= image_tag @item.picture_url.to_s %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @item.name %>
 </p>

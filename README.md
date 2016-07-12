@@ -26,3 +26,16 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+<b>Installation</b>
+
+Open ruby terminal and run this command in the root folder
+
+$ gem install
+$ rake db:migrate db:seed
+
+<b>Run the application</b>
+
+Open another terminal and run this command in the root folder
+
+$ rails s -p 3000

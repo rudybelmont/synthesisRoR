@@ -1,7 +1,8 @@
+# Item Controller As API
 class ItemsController < ApplicationController
   include ItemsHelper
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  	skip_before_filter  :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token
 
   # GET /items
   # GET /items.json
@@ -12,6 +13,20 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    item = params[:id] && Item.find_by(id: params[:id])
+    if item
+      item_material = ItemMaterial.where(item_id: params[:id])
+      @item = item
+      @material_list = []
+      materials = Material.all
+
+      item_material.each do |item_code|
+        @material_list.push(materials.find_by(id: item_code.material_id))
+      end
+
+    else
+      json_blank(404, 'Item cannot be found.')
+    end
   end
 
   # GET /items/new
@@ -63,14 +78,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def upload_item_picture
+  end
+
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_item
     @item = Item.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Only allow the white list through.
   def item_params
-    params.require(:item).permit(:name, :rank, :recipe, :status)
+    params.require(:item).permit(:name, :rank, :description, :status, :picture)
   end
 end
