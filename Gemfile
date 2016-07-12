@@ -29,11 +29,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# CORS
-gem 'rack-cors'
+# For Allow Cross-Origin Resource Sharing (CORS)
+gem 'rack-cors', require: 'rack/cors'
 
 # upload image
-#gem 'rmagick'
 gem 'carrierwave'
 gem 'carrierwave-base64'
 
@@ -49,6 +48,13 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Output template
+gem 'responders'
+# gem 'rabl-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

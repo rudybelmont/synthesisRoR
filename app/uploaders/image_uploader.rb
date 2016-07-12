@@ -48,8 +48,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  #version :thumb do
+  # version :thumb do
   #  process :resize_to_limit => [200, 200]
-  #end
+  # end
+
+  def filename
+    "mainItem.#{model.picture.file.extension}" if !model.picture.nil? && !model.picture.file.nil?
+  end
 
 end

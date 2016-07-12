@@ -6,5 +6,8 @@
     // If not specified, it assumes a null value by default.
     // "ruby.rubocop.configFilePath": "/path/to/config/.rubocop.yml",
     // default true
-    "ruby.rubocop.onSave": true
+    "ruby.rubocop.onSave": true,
+    
+    // enable Indent Guides
+    "editor.renderIndentGuides": true
 }
